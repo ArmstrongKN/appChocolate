@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar, ImageBackground, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 
-export default function App() {
+const Nuts = () => {
   return (
     <ImageBackground source={require("../assets/nutsLogo.jpg")} style={styles.background}>
       <View style={styles.container}>
@@ -10,10 +10,7 @@ export default function App() {
         <ScrollView>
           <Text style={styles.subtitulo}>Nuts</Text>
           <Image style={styles.img} resizeMode="center" source={require("../assets/nutsBox.jpg")} />
-          <Text style={styles.texto}>
-          A combinação do chocolate com nuts da Lindt é gostosa porque resulta em um chocolate de alta qualidade combinado com uma textura crocante e única da seleção das melhores nozes.
-"Nuts" é uma palavra em inglês que se refere a nozes em geral, incluindo castanhas, amêndoas, pistaches, avelãs e entre outras.
-Esses alimentos são ricos em nutrientes, como gorduras saudáveis, proteínas, fibras, vitaminas e minerais, e são frequentemente adicionados nesse tipo de chocolate para dar sabor e textura.
+          <Text style={styles.texto}> A combinação do chocolate com nuts da Lindt é gostosa porque resulta em um chocolate de alta qualidade combinado com uma textura crocante e única da seleção das melhores nozes. "Nuts" é uma palavra em inglês que se refere a nozes em geral, incluindo castanhas, amêndoas, pistaches, avelãs e entre outras. Esses alimentos são ricos em nutrientes, como gorduras saudáveis, proteínas, fibras, vitaminas e minerais, e são frequentemente adicionados nesse tipo de chocolate para dar sabor e textura.
           </Text>
         </ScrollView>
         <StatusBar style="auto" />
@@ -50,3 +47,5 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   }
 });
+
+export default Nuts;

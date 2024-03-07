@@ -1,35 +1,38 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, SafeAreaView } from 'react-native'; // Remova a segunda importação de Image
+import { useNavigation } from '@react-navigation/native';
+import { ScrollView, StyleSheet, Text, Image, ImageBackground, TouchableOpacity, SafeAreaView } from 'react-native';  
 
-export default function Rotas(props) {
+const Rotas = () => {
+
+  const navigation = useNavigation();
+  
   return (
     <SafeAreaView style={styles.container}>
-      {<ImageBackground source={require('../assets/choc.jpg')} style={styles.back}>
+      <ImageBackground source={require('../assets/choc.jpg')} style={styles.back}>
       
         <ScrollView>
         <Text style={styles.titulo}>CHOCOLATERIA</Text>
-          <Text style={styles.subtitulo}>Cacau Show</Text>
+       
           <StatusBar style="auto" />
-
-          <TouchableOpacity style={styles.botao} onPress={()=>{props.navigation.navigate('Cacau Show')}}> {/* Corrigido 'touchableOpacity' para 'TouchableOpacity' */}
+          <Text style={styles.subtitulo}>Cacau Show</Text>
+          <TouchableOpacity style={styles.botao} onPress={()=>{navigation.navigate('Cacau')}}>
             <Image style={styles.image} resizeMode="center" source={require("../assets/cacauShow.jpg")} />
-          </TouchableOpacity> {/* Corrigido 'touchableOpacity' para 'TouchableOpacity' */}
-          <Image style={styles.img} resizeMode="center" source={require("../assets/cacauShow.jpg")} />
-
+          </TouchableOpacity>
+         
           <Text style={styles.subtitulo}>Kopenhagen</Text>
-          <TouchableOpacity style={styles.botao} onPress={()=>{props.navigation.navigate('Kopenhagen')}}> {/* Corrigido 'touchableOpacity' para 'TouchableOpacity' */}
+          <TouchableOpacity style={styles.botao} onPress={()=>{navigation.navigate('Kopenhagen')}}> 
             <Image style={styles.image} resizeMode="center" source={require("../assets/Kopenhagen.jpg")} />
-          </TouchableOpacity> {/* Corrigido 'touchableOpacity' para 'TouchableOpacity' */}
+          </TouchableOpacity>
 
           <Text style={styles.subtitulo}>Nuts</Text>
-          <TouchableOpacity style={styles.botao} onPress={()=>{props.navigation.navigate('Nuts')}}> {/* Corrigido 'touchableOpacity' para 'TouchableOpacity' */}
+          <TouchableOpacity style={styles.botao} onPress={()=>{navigation.navigate('Nuts')}}>
             <Image style={styles.image} resizeMode="center" source={require("../assets/nuts.jpg")} />
-          </TouchableOpacity> {/* Corrigido 'touchableOpacity' para 'TouchableOpacity' */}
+          </TouchableOpacity>
         
         </ScrollView>
 
-       </ImageBackground>}
+       </ImageBackground>
 
       
     </SafeAreaView>
@@ -55,3 +58,5 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   }
 });
+
+export default Rotas;

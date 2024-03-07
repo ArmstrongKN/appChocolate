@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar, ImageBackground, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 
-export default function App() {
+const Cacau = () => {
   return (
     <ImageBackground source={require("../assets/cacauLogo.png")} style={styles.background}>
       <View style={styles.container}>
@@ -10,13 +10,7 @@ export default function App() {
         <ScrollView>
           <Text style={styles.subtitulo}>Cacau Show</Text>
           <Image style={styles.img} resizeMode="center" source={require("../assets/cacauBox.jpg")} />
-          <Text style={styles.texto}>
-          Conforme estampamos em nossas paredes, temos consciência 
-de que “Nenhum de nós é melhor do que todos nós juntos”.
-Contamos e acreditamos que somente em grupo poderemos 
-atingir nossos objetivos. Criamos e cultivamos vínculos que 
-transbordam a simplicidade das relações que temos na firma.
-          </Text>
+          <Text style={styles.texto}> Conforme estampamos em nossas paredes, temos consciência de que “Nenhum de nós é melhor do que todos nós juntos”. Contamos e acreditamos que somente em grupo poderemos atingir nossos objetivos. Criamos e cultivamos vínculos que transbordam a simplicidade das relações que temos na firma.  </Text>
         </ScrollView>
         <StatusBar style="auto" />
       </View>
@@ -52,3 +46,5 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   }
 });
+
+export default Cacau;
