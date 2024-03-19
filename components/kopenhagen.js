@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar, ImageBackground, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 
-const Kopenhagen = () => {
+export default function Kopenhagen() {
   return (
     <ImageBackground source={require("../assets/kopenhagenLogo.jpg")} style={styles.background}>
       <View style={styles.container}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar, ImageBackground, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 
-const Nuts = () => {
+export default function Nuts() {
   return (
     <ImageBackground source={require("../assets/nutsLogo.jpg")} style={styles.background}>
       <View style={styles.container}>
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Nuts;
+ 

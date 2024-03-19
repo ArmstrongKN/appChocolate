@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar, ImageBackground, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 
-const Cacau = () => {
+export default function Cacau(){
   return (
     <ImageBackground source={require("../assets/cacauLogo.png")} style={styles.background}>
       <View style={styles.container}>
@@ -47,4 +47,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Cacau;
+ 
