@@ -1,13 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import * as React from 'react';
-
-import Rotas from '../components/Rotas';
+import { NavigationContainer } from '@react-navigation/native';
+import Rotas from './components/rotas';
 
 export default function App(){
   return(
-    <>
-    <StatusBar/>
-    <Rotas/>
-    </>
+    <NavigationContainer>
+      <StatusBar/>
+      <Rotas />
+    </NavigationContainer>
   );
 }
+ 

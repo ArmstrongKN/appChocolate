@@ -1,36 +1,36 @@
-import { StyleSheet,SafeAreaView, Text, View,Image, ImageBackground, TouchableOpacity, ScrollView } from 'react-native';
+import React from 'react';
+import { StyleSheet, SafeAreaView, Text, ImageBackground, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-export default function Home(props) {
+const chocolaterias = [
+  { id: 1, name: 'Cacau Show', image: require('../assets/cacauShow.jpg') },
+  { id: 2, name: 'Kopenhagen', image: require('../assets/Kopenhagen.jpg') },
+  { id: 3, name: 'Nuts', image: require('../assets/nuts.jpg') },
+];
+
+export default function Home({ navigation }) {
+  const renderItem = ({ item }) => (
+    <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate(item.name.toLowerCase())}>
+      <Text style={styles.subtitulo}>{item.name}</Text>
+      <ImageBackground style={styles.image} resizeMode="cover" source={item.image}>
+        <Text style={styles.overlay}>{item.name}</Text>
+      </ImageBackground>
+    </TouchableOpacity>
+  );
+
   return (
     <SafeAreaView style={styles.container}>
-      
       <ImageBackground source={require('../assets/choc.jpg')} style={styles.back}>
-      
-      <ScrollView>
-        <Text style={styles.titulo}>CHOCOLATERIA</Text>
-  
-          <Text style={styles.subtitulo}>Cacau Show</Text>
-          <StatusBar style="auto" />
-          <TouchableOpacity style={styles.botao} onPress={()=>{props.navigation.navigate('cacau')}}>
-          <Image style={styles.image} resizeMode="center" source={require("../assets/cacauShow.jpg")} />
-          </TouchableOpacity>
-         
-          <Text style={styles.subtitulo}>Kopenhagen</Text>
-          <TouchableOpacity style={styles.botao} onPress={()=>{props.navigation.navigate('kopenhagen')}}> 
-          <Image style={styles.image} resizeMode="center" source={require("../assets/Kopenhagen.jpg")} />
-          </TouchableOpacity>
-
-          <Text style={styles.subtitulo}>Nuts</Text>
-          <TouchableOpacity style={styles.botao} onPress={()=>{props.navigation.navigate('nuts')}}>
-          <Image style={styles.image} resizeMode="center" source={require("../assets/nuts.jpg")} />
-          </TouchableOpacity>
-        
+        <ScrollView>
+          <Text style={styles.titulo}>CHOCOLATERIA</Text>
+          <FlatList
+            data={chocolaterias}
+            renderItem={renderItem}
+            keyExtractor={item => item.id.toString()}
+          />
         </ScrollView>
-
-       </ImageBackground>
-
-      
+        <StatusBar style="auto" />
+      </ImageBackground>
     </SafeAreaView>
   );
 }
@@ -39,29 +39,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: 50,
-  },
-  image:{
-    marginLeft: 40,
-    margin: 0,
-    display: 'flex',
-    width: 300,
-    height: 150,
-  },
-  subtitulo:{
-    margin: 10,
-    textAlign: 'center',
-    color: '#DEB887',
-    fontSize: 40,
-  },
-  texto:{
-    padding: 10,
-    margin: 10,
-    textAlign: 'center',
-    color: '#DCDCDC',
-    fontSize: 30,
   },
   back: {
     flex: 1,
@@ -71,5 +48,30 @@ const styles = StyleSheet.create({
     height: '100%',
     zIndex: -1,
     position: 'absolute',
+  },
+  titulo: {
+    fontSize: 50,
+    textAlign: 'center',
+    color: '#fff',
+    marginBottom: 20,
+  },
+  subtitulo: {
+    fontSize: 40,
+    textAlign: 'center',
+    color: '#DEB887',
+    marginBottom: 10,
+  },
+  image: {
+    width: '100%',
+    height: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  overlay: {
+    fontSize: 30,
+    color: '#fff',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
 });

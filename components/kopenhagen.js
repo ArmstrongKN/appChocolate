@@ -9,7 +9,7 @@ export default function Kopenhagen() {
 
         <ScrollView>
           <Text style={styles.subtitulo}>Kopenhagen</Text>
-          <Image style={styles.img} resizeMode="center" source={require("../assets/KopenhagenBox.jpg")} />
+          <Image style={styles.img} resizeMode="center" source={require("../assets/kopenhagenBox.png")} />
           <Text style={styles.texto}> Há mais de 95 anos a Kopenhagen, marca 100% brasileira, nasceu com um propósito: Fazer a diferença em cada momento criando emoções únicas à partir do sabor inigualável do seu chocolate. Baseados nesse objetivo, ano a ano, década a década, muitos dos chocolates Kopenhagen ganharam o status de clássicos, ícones que atravessam gerações e marcam momentos únicos de alegria e celebração fazendo a diferença na vida das pessoas. O elo criado com todos os nossos clientes por meio do sabor sofisticado que atravessou a barreira do tempo, fez com que o propósito da Kopenhagen ficasse ainda mais fiel ao que todos entendiam como a verdade da marca: a Kopenhagen gera conexões e transforma momentos comuns em extraordinários.
           </Text>
         </ScrollView>
