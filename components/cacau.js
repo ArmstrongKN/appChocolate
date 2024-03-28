@@ -1,12 +1,10 @@
 import React from 'react';
 import { StatusBar, ImageBackground, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 
-const Cacau = () => {
+export default function Cacau() {
   return (
     <ImageBackground source={require("../assets/cacauLogo.png")} style={styles.background}>
       <View style={styles.container}>
-        <Text>CHOCOLATERIA</Text>
-
         <ScrollView>
           <Text style={styles.subtitulo}>Cacau Show</Text>
           <Image style={styles.img} resizeMode="center" source={require("../assets/cacauBox.jpg")} />
@@ -25,6 +23,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   background: {
+    width:420,
+    height:200,
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center"
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   subtitulo: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 180,
   },
   texto: {
     fontSize: 12,
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   img: {
+    marginTop: 10,
     width: 250,
     height: 200,
     borderRadius: 8,
@@ -47,4 +48,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Cacau;
+ 
