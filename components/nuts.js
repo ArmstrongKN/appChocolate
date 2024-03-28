@@ -2,9 +2,12 @@ import React from 'react';
 import { StatusBar, ImageBackground, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+<<<<<<< HEAD
 const MinhaTela = () => {
 const navigation = useNavigation();
 
+=======
+>>>>>>> 3e5a137339886f7c05fdaba9752be90502cdd55a
 export default function Nuts() {
   return (
     <ImageBackground source={require("../assets/nutsLogo.jpg")} style={styles.background}>

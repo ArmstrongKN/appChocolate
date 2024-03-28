@@ -1,7 +1,11 @@
 import React from 'react';
 import { StatusBar, ImageBackground, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 
+<<<<<<< HEAD
 export default function Cacau() {
+=======
+export default function Cacau(){
+>>>>>>> 3e5a137339886f7c05fdaba9752be90502cdd55a
   return (
     <ImageBackground source={require("../assets/cacauLogo.png")} style={styles.background}>
       <View style={styles.container}>
