@@ -1,36 +1,37 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Text, ImageBackground, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native';
+import { ScrollView, StyleSheet, Text, Image, ImageBackground, TouchableOpacity, SafeAreaView } from 'react-native';  
 
-const chocolaterias = [
-  { id: 1, name: 'Cacau Show', image: require('../assets/cacauShow.jpg') },
-  { id: 2, name: 'Kopenhagen', image: require('../assets/Kopenhagen.jpg') },
-  { id: 3, name: 'Nuts', image: require('../assets/nuts.jpg') },
-];
+const Rotas = () => {
 
-export default function Home({ navigation }) {
-  const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate(item.name.toLowerCase())}>
-      <Text style={styles.subtitulo}>{item.name}</Text>
-      <ImageBackground style={styles.image} resizeMode="cover" source={item.image}>
-        <Text style={styles.overlay}>{item.name}</Text>
-      </ImageBackground>
-    </TouchableOpacity>
-  );
+const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={require('../assets/choc.jpg')} style={styles.back}>
+
         <ScrollView>
-          <Text style={styles.titulo}>CHOCOLATERIA</Text>
-          <FlatList
-            data={chocolaterias}
-            renderItem={renderItem}
-            keyExtractor={item => item.id.toString()}
-          />
+        <Text style={styles.titulo}>CHOCOLATERIA</Text>
+
+          <StatusBar style="auto" />
+          <Text style={styles.subtitulo}>Cacau Show</Text>
+          <TouchableOpacity style={styles.botao} onPress={()=>{navigation.navigate('Cacau')}}>
+            <Image style={styles.image} resizeMode="center" source={require("../assets/cacauShow.jpg")} />
+          </TouchableOpacity>
+
+          <Text style={styles.subtitulo}>Kopenhagen</Text>
+          <TouchableOpacity style={styles.botao} onPress={()=>{navigation.navigate('Kopenhagen')}}> 
+            <Image style={styles.image} resizeMode="center" source={require("../assets/Kopenhagen.jpg")} />
+          </TouchableOpacity>
+
+          <Text style={styles.subtitulo}>Nuts</Text>
+          <TouchableOpacity style={styles.botao} onPress={()=>{navigation.navigate('Nuts')}}>
+            <Image style={styles.image} resizeMode="center" source={require("../assets/nuts.jpg")} />
+          </TouchableOpacity>
+
         </ScrollView>
-        <StatusBar style="auto" />
-      </ImageBackground>
+       </ImageBackground>
     </SafeAreaView>
   );
 }
@@ -38,40 +39,31 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#6c3c0c',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   back: {
-    flex: 1,
-    justifyContent: 'center',
-    resizeMode: 'cover',
-    width: '100%',
-    height: '100%',
-    zIndex: -1,
-    position: 'absolute',
-  },
-  titulo: {
-    fontSize: 50,
-    textAlign: 'center',
-    color: '#fff',
-    marginBottom: 20,
-  },
-  subtitulo: {
-    fontSize: 40,
-    textAlign: 'center',
-    color: '#DEB887',
-    marginBottom: 10,
-  },
-  image: {
-    width: '100%',
-    height: 200,
+    width: 800,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  overlay: {
-    fontSize: 30,
-    color: '#fff',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    paddingHorizontal: 10,
-    paddingVertical: 5,
+  subtitulo: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+  image: {
+    width: 350,
+    height: 200,
+    borderRadius: 300,
+    marginVertical: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
 });
+
+export default Rotas;

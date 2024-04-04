@@ -26,8 +26,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   background: {
-    width:420,
-    height:200,
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center"
@@ -43,11 +41,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   img: {
-    marginTop: 10,
     width: 250,
     height: 200,
     borderRadius: 8,
     marginVertical: 15,
   }
 });
- 
